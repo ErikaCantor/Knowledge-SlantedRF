@@ -19,10 +19,12 @@ p=ncol(scores) #number of genes
 data=read.table("data", header = TRUE, sep="\t") 
 names(data)[1] <- "y"
 n=nrow(data)
-ntrees_g=c(10,50,100,200,300,400,500,1000)
-mtry_g = c(10, 50, 125,200,300,400,500,600,700,800, 955,5064)
-ntree=500
-mtry=500
+
+#'Parameters for RF
+#'ntrees_g: grid of trees
+#'mtry_g:  grid of mtry
+#'ntree: optimal ntree
+#'#mtry: optimal mtry
 
 #weights for knowledge-slanted random forest
 rwr_results=rwr_prior(p,scores,r,seednodes$V1)
